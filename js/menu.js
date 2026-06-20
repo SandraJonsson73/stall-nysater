@@ -1,19 +1,20 @@
+const parts = window.location.pathname.split('/').filter(Boolean);
+const depth = parts.length > 1 ? parts.length - 1 : 0;
+const prefix = depth > 0 ? '../'.repeat(depth) : '';
 
-
-fetch("menu.html")
+fetch(prefix + 'menu.html')
   .then(response => response.text())
   .then(data => {
-    document.getElementById("menu").innerHTML = data;
+    document.getElementById('menu').innerHTML = data;
 
-    // 🔹 När menyn är inladdad: markera aktuell sida
-    const currentPage = window.location.pathname.split("/").pop(); // t.ex. "index.html"
-    const links = document.querySelectorAll("nav a");
+    const currentPath = window.location.pathname;
+    const links = document.querySelectorAll('nav a');
 
     links.forEach(link => {
-      if (link.getAttribute("href") === currentPage) {
-        // Gör länken oklickbar
-        link.classList.add("active");
-        link.removeAttribute("href"); // gör så man inte kan klicka
+      const href = link.getAttribute('href');
+      if (href && currentPath.endsWith('/' + href.replace(/^\//, ''))) {
+        link.classList.add('active');
+        link.removeAttribute('href');
       }
     });
   });

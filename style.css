@@ -141,6 +141,7 @@ h2 {
   text-align: center;
   font-family: "Poiret One", sans-serif;
   font-size: 1.5em;
+  margin-top: 2rem;
 }
 
 h3 {
@@ -436,4 +437,313 @@ img {
   .news-box {
     max-width: 300px;
   }
+}
+
+/* Häst-kort (Våra hästar) */
+.horse-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.horse-grid-centered {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 280px));
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 700px) {
+  .horse-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.horse-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.horse-card {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 18px;
+  overflow: hidden;
+  padding-bottom: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.horse-card-link:hover .horse-card {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
+  cursor: pointer;
+}
+
+.horse-card-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.horse-card-body {
+  padding: 1rem;
+  text-align: center;
+}
+
+.horse-card-body h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #34134d;
+  font-family: 'Berkshire Swash', cursive;
+  font-weight: 400;
+}
+
+/* Hästsida – detaljvy */
+.horse-details-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.results-summary {
+  max-width: 300px;
+  margin: 1.5rem auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.results-summary p {
+  margin: 0.35rem 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #34134d;
+}
+
+.results-table-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.results-table-card {
+  width: 100%;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.results-table th,
+.results-table td {
+  padding: 12px 14px;
+  text-align: center;
+  border-bottom: 1px solid rgba(77, 13, 115, 0.12);
+}
+
+.results-table th {
+  background-color: #d5c0e3;
+  color: #4a2561;
+  font-weight: 700;
+}
+
+.results-table td {
+  color: #34134d;
+}
+
+.results-table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 700px) {
+  .results-table-wrapper {
+    display: block;
+  }
+  .results-table,
+  .results-table thead,
+  .results-table tbody,
+  .results-table th,
+  .results-table td,
+  .results-table tr {
+    display: block;
+    width: 100%;
+  }
+  .results-table thead {
+    display: none;
+  }
+  .results-table tr {
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 16px;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
+  .results-table td {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.55rem 0;
+    border: none;
+    text-align: right;
+  }
+  .results-table td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: #4a2561;
+    text-align: left;
+  }
+}
+
+.back-button {
+  display: inline-block;
+  background-color: #d5c0e3;
+  color: #4a2561;
+  border: none;
+  border-radius: 16px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #4d0d73;
+  color: white;
+}
+
+/* Lopp vi minns */
+.remembered-race-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 2rem auto 0 auto;
+}
+
+.remembered-race-card {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 18px;
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.remembered-race-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
+}
+
+.remembered-race-card-body {
+  text-align: center;
+}
+
+.remembered-race-card-body h3 {
+  margin: 0 0 0.75rem 0;
+  color: #34134d;
+  font-size: 1.8rem;
+  font-family: 'Berkshire Swash', cursive;
+  font-weight: 400;
+}
+
+.remembered-race-title {
+  margin-bottom: 1rem;
+  color: #4a2561;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.remembered-race-description {
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+  color: #34134d;
+}
+
+.race-link-button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  background-color: #d5c0e3;
+  color: #4a2561;
+  border-radius: 16px;
+  padding: 10px 16px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.race-link-button:hover {
+  background-color: #c4a8d8;
+  transform: translateY(-2px);
+}
+
+.race-link-button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* Video-modal */
+.video-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 0, 79, 0.75);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-modal-overlay.active {
+  display: flex;
+}
+
+.video-modal-box {
+  position: relative;
+  width: 90vw;
+  max-width: 860px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.video-modal-box iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.video-modal-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  z-index: 10;
+  background: rgba(44, 0, 79, 0.8);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1;
 }

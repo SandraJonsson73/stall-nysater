@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+  <title>Stall Nysäter - Lopp vi minns</title>
+</head>
+
+<div class="container">
+
+  <header id="menu"></header>
+
+  <body>
+    <main>
+
+      <article>
+        <h1>Lopp vi minns</h1>
+
+        <div class="remembered-race-grid">
+
+          <div class="remembered-race-card">
+            <div class="remembered-race-card-body">
+              <h3>Caracas Stecca (IT)</h3>
+              <p class="remembered-race-title">Rättvik 2024-05-12 Lopp 3</p>
+              <p class="remembered-race-description">Ett minnesvärt lopp där Caracas vann sitt första lopp.</p>
+              <a class="race-link-button"
+                 href="https://youtu.be/shVLeDCj-4c"
+                 target="_blank"
+                 rel="noopener noreferrer">Se loppet på YouTube</a>
+            </div>
+          </div>
+
+          <div class="remembered-race-card">
+            <div class="remembered-race-card-body">
+              <h3>Downton Abbe C.G</h3>
+              <p class="remembered-race-title">Axevalla 2018-11-13 Lopp 1</p>
+              <p class="remembered-race-description">Abbey's Enda lopp hon vann.</p>
+              <button class="race-link-button" onclick="openVideo('C4X1WY1pRrE')">Se loppet</button>
+            </div>
+          </div>
+
+          <div class="remembered-race-card">
+            <div class="remembered-race-card-body">
+              <h3>Gina B.T</h3>
+              <p class="remembered-race-title">Rättvik 2018-06-23 Cool Keepers Lilla Midsommarloppet</p>
+              <p class="remembered-race-description">Från bricka 1 travade Gina närmsta vägen från start till mål.</p>
+              <button class="race-link-button" onclick="openVideo('SL32JMd67NI')">Se loppet</button>
+            </div>
+          </div>
+
+          <div class="remembered-race-card">
+            <div class="remembered-race-card-body">
+              <h3>Gina B.T</h3>
+              <p class="remembered-race-title">Lindesberg 2018-06-10 Lopp 2</p>
+              <p class="remembered-race-description">Från bricka 15 rundade Gina hela fältet.</p>
+              <button class="race-link-button" onclick="openVideo('GKF9siQoIq8')">Se loppet</button>
+            </div>
+          </div>
+
+          <div class="remembered-race-card">
+            <div class="remembered-race-card-body">
+              <h3>Tip Top</h3>
+              <p class="remembered-race-title">Färjestad 2015-10-06 5-års Mästerskapet kat. B</p>
+              <p class="remembered-race-description">Tippens absolut sista lopp OCH vinst i Sverige. Det gick undan på mellan 500m och 1000m.</p>
+              <button class="race-link-button" onclick="openVideo('Rk5Kpspyo8I')">Se loppet</button>
+            </div>
+          </div>
+
+          <div class="remembered-race-card">
+            <div class="remembered-race-card-body">
+              <h3>Tip Top</h3>
+              <p class="remembered-race-title">Jägersro 2014-09-07 Svenskt PonnyTravDerby kat. B</p>
+              <p class="remembered-race-description">Tippens enkla vinst i mästerskapsloppet Svenskt PonnyTravDerby.</p>
+              <button class="race-link-button" onclick="openVideo('kK5v_9YyZpU')">Se loppet</button>
+            </div>
+          </div>
+
+          <div class="remembered-race-card">
+            <div class="remembered-race-card-body">
+              <h3>Tip Top</h3>
+              <p class="remembered-race-title">Axevalla 2014-06-03</p>
+              <p class="remembered-race-description">Tippens enkla vinst, trots trafikproblem och med ett Hej Då och Tack för sällskapet.</p>
+              <button class="race-link-button" onclick="openVideo('LiBSuNteGw8')">Se loppet</button>
+            </div>
+          </div>
+
+        </div>
+
+        <article>
+          <p>
+            ~~~~~~~~~~~~~~~<br>
+            © Stall Nysäter 2025-2026</p>
+        </article>
+      </article>
+    </main>
+  </div>
+
+  <!-- Video-modal -->
+  <div id="video-modal" class="video-modal-overlay" onclick="closeVideo(event)">
+    <div class="video-modal-box">
+      <button class="video-modal-close" onclick="closeVideo()">&#x2715;</button>
+      <iframe id="video-iframe"
+              src=""
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script src="js/menu.js" defer></script>
+  <script>
+    function openVideo(videoId) {
+      document.getElementById('video-iframe').src =
+        'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+      document.getElementById('video-modal').classList.add('active');
+    }
+
+    function closeVideo(event) {
+      if (event && event.target !== document.getElementById('video-modal')) return;
+      document.getElementById('video-modal').classList.remove('active');
+      document.getElementById('video-iframe').src = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeVideo();
+    });
+  </script>
+  </body>
+
+</html>
