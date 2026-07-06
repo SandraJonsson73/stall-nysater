@@ -466,6 +466,42 @@ img {
   color: inherit;
 }
 
+.projekt-sections {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+.projekt-section {
+  flex: 1;
+  min-width: 0;
+}
+
+.projekt-section h2 {
+  text-align: center;
+  color: #34134d;
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #d5c0e3;
+}
+
+.projekt-horse-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .projekt-sections {
+    flex-direction: column;
+  }
+}
+
 .horse-card {
   background: rgba(255, 255, 255, 0.88);
   border-radius: 18px;
